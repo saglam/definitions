@@ -27,6 +27,12 @@
   \aliascntresetthe{lemma}
   \def\lemmaautorefname{Lemma}
 
+%Proposition
+  \newaliascnt{proposition}{theorem}
+  \newtheorem{proposition}[proposition]{Proposition}
+  \aliascntresetthe{proposition}
+  \def\lemmaautorefname{Proposition}
+
 %Remark
   \newaliascnt{remark}{theorem}
   \newtheorem{remark}[remark]{Remark}
@@ -47,7 +53,6 @@
 \def\subsectionautorefname{Section}
 \def\propositionautorefname{Proposition}
 \def\factautorefname{Fact}
-
 
 \renewenvironment{abstract}{\list{}{%
     \setlength{\leftmargin}{3em}%

@@ -1,0 +1,15 @@
+\newif\ifarxiv
+
+\ifarxiv
+\usepackage{expl3}
+\ExplSyntaxOn
+\newcommand \breakDOI[1]
+ {
+  \tl_map_inline:nn { #1 } { \href{http://dx.doi.org/#1}{##1} \penalty0 \scan_stop: }
+ }
+\ExplSyntaxOff
+
+\DeclareFieldFormat{doi}{%
+  \mkbibacro{DOI}\addcolon\space
+  {\breakDOI{#1}}}
+\fi

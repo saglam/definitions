@@ -1,0 +1,56 @@
+\newtheorem{theorem}{Theorem}[section]
+
+% Here we assign aliases so that autoref can identify and
+% correctly name each theoremlike separately
+
+%Conjecture
+  \newaliascnt{conjecture}{theorem}
+  \newtheorem{conjecture}[conjecture]{Conjecture}
+  \aliascntresetthe{conjecture}
+  \def\conjectureautorefname{Conjecture}
+
+%Corollary
+  \newaliascnt{corollary}{theorem}
+  \newtheorem{corollary}[corollary]{Corollary}
+  \aliascntresetthe{corollary}
+  \def\corollaryautorefname{Corollary}
+
+%Definition
+  \newaliascnt{definition}{theorem}
+  \newtheorem{definition}[definition]{Definition}
+  \aliascntresetthe{definition}
+  \def\definitionautorefname{Definition}
+
+%Lemma
+  \newaliascnt{lemma}{theorem}
+  \newtheorem{lemma}[lemma]{Lemma}
+  \aliascntresetthe{lemma}
+  \def\lemmaautorefname{Lemma}
+
+%Remark
+  \newaliascnt{remark}{theorem}
+  \newtheorem{remark}[remark]{Remark}
+  \aliascntresetthe{remark}
+  \def\remarkautorefname{Remark}
+
+%Adjust equation names (so they look like Eq.(5.1))
+\numberwithin{equation}{section}
+\makeatletter
+\let\oldtheequation\theequation
+\renewcommand\tagform@[1]{\maketag@@@{\ignorespaces#1\unskip\@@italiccorr}}
+\renewcommand\theequation{(\oldtheequation)}
+\makeatother
+\renewcommand{\equationautorefname}{Eq.\kern-2pt}
+
+\def\claimautorefname{Claim}
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+\def\propositionautorefname{Proposition}
+\def\factautorefname{Fact}
+
+
+\renewenvironment{abstract}{\list{}{%
+    \setlength{\leftmargin}{3em}%
+    \setlength{\rightmargin}{\leftmargin}%
+    \listparindent 1.4em%
+  }\item\relax{\bf Abstract.}}{\endlist}

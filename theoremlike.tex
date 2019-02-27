@@ -31,7 +31,7 @@
   \newaliascnt{proposition}{theorem}
   \newtheorem{proposition}[proposition]{Proposition}
   \aliascntresetthe{proposition}
-  \def\lemmaautorefname{Proposition}
+  \def\propositionautorefname{Proposition}
 
 %Remark
   \newaliascnt{remark}{theorem}
@@ -51,11 +51,6 @@
 \def\claimautorefname{Claim}
 \def\sectionautorefname{Section}
 \def\subsectionautorefname{Section}
+\def\chapterautorefname{Chapter}
 \def\propositionautorefname{Proposition}
 \def\factautorefname{Fact}
-
-\renewenvironment{abstract}{\list{}{%
-    \setlength{\leftmargin}{3em}%
-    \setlength{\rightmargin}{\leftmargin}%
-    \listparindent 1.4em%
-  }\item\relax{\bf Abstract.}}{\endlist}
